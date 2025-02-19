@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { AuthService } from '../../services/auth.service';
 import { HttpResponse } from '@angular/common/http';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -12,13 +13,14 @@ export class LoginComponent {
   password: string = '';
   message: string = '';
 
-  constructor(private authService: AuthService) {}
-
+  constructor(private authService: AuthService, private router: Router) {}
   onLogin() {
     this.authService.login(this.username, this.password).subscribe({
       next: (response: HttpResponse<any>) => {
         if (response.status === 200) {
+          localStorage.setItem('token', response.body.token);
           this.message = 'Login exitoso!';
+          this.router.navigate(['/home']);
         } else if (response.status === 300) {
           this.message = 'Redirección, revisa tu cuenta.';
         }

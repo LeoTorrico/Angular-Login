@@ -1,0 +1,90 @@
+/* Estilos para el contenedor principal */
+.home-container {
+  max-width: 800px;
+  min-height: 400px;
+  margin: 2rem auto;
+  padding: 3rem;
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
+  text-align: center;
+  animation: fadeIn 0.8s ease-out;
+}
+
+/* Título principal */
+.home-container h2 {
+  font-size: 2.5rem;
+  color: #2d3748;
+  margin-bottom: 1.5rem;
+  font-weight: 700;
+  background: linear-gradient(120deg, #4299e1, #667eea);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: slideDown 0.5s ease-out;
+}
+
+/* Mensaje de bienvenida */
+.home-container p {
+  font-size: 1.25rem;
+  color: #4a5568;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+  animation: slideUp 0.5s ease-out 0.3s backwards;
+}
+
+/* Botón de cerrar sesión */
+.home-container button {
+  padding: 12px 24px;
+  background-color: #f56565;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  animation: fadeIn 0.5s ease-out 0.6s backwards;
+}
+
+.home-container button:hover {
+  background-color: #e53e3e;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+.home-container button:active {
+  transform: translateY(1px);
+  box-shadow: none;
+}
+
+/* Animaciones */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideDown {
+  from {
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
